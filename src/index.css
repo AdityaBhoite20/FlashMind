@@ -1,0 +1,104 @@
+:root {
+  --bg: #0f1220;
+  --card-bg: #1b1f33;
+  --accent: #7c5cff;
+  --accent-2: #34d8b0;
+  --text: #f0f0f5;
+  --muted: #9a9db0;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.app {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 16px 64px;
+}
+
+header h1 { margin-bottom: 4px; }
+header p { color: var(--muted); margin-top: 0; }
+
+.upload-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: var(--card-bg);
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.upload-form textarea {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background: #12162a;
+  color: var(--text);
+  padding: 10px;
+  resize: vertical;
+}
+
+.upload-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.count-label { display: flex; align-items: center; gap: 6px; font-size: 0.9rem; color: var(--muted); }
+.count-label input { width: 56px; }
+
+button {
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: 600;
+}
+button:disabled { opacity: 0.5; cursor: not-allowed; }
+button.active { background: var(--accent-2); }
+
+.mode-switch { display: flex; gap: 8px; margin-bottom: 16px; }
+.mode-switch button { background: #2a2f4a; }
+.mode-switch button.active { background: var(--accent); }
+
+.deck { text-align: center; }
+.card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 40px 20px;
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+.card-label { color: var(--muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
+.card-content { font-size: 1.2rem; margin: 12px 0; }
+.card-hint { color: var(--muted); font-size: 0.75rem; }
+
+.deck-controls { display: flex; justify-content: center; gap: 12px; }
+
+.quiz-question { font-size: 1.1rem; margin-bottom: 12px; }
+.quiz-options { display: flex; flex-direction: column; gap: 8px; }
+.quiz-options button { background: #2a2f4a; text-align: left; }
+.quiz-options button.correct { background: var(--accent-2); color: #0f1220; }
+.quiz-options button.wrong { background: #e5484d; }
+
+.progress-section { margin-top: 32px; }
+.progress-summary { display: flex; justify-content: space-between; cursor: pointer; background: var(--card-bg); padding: 10px 14px; border-radius: 8px; }
+.progress-list { list-style: none; padding: 0; margin-top: 8px; color: var(--muted); font-size: 0.9rem; }
+.progress-empty { color: var(--muted); }
+
+.error { color: #e5484d; }
+.source-note { color: var(--muted); font-size: 0.85rem; }
